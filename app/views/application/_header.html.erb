@@ -1,0 +1,21 @@
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">Switch</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <%= link_to 'Home', root_path, class: 'nav-link' %>
+    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <li><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+      </li>
+      <li class="nav-item">
+        <li><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
