@@ -1,0 +1,7 @@
+<h4>Devices:</h4>
+<% @response.each do |d| %>
+  <p>Name: <%= d["name"] %></br>
+  Status: <%= d["value"] %></p>
+<% end %>
+
+
