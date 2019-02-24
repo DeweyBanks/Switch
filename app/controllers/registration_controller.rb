@@ -17,7 +17,7 @@ class RegistrationController < ApplicationController
 
   def switch
     if !authenticated?
-      redirect root_path
+      redirect_to root_path and return
     end
     token = session[:access_token]
     url = URI.parse(@endpoints_uri)
