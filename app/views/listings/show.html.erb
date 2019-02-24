@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Listing for <%= @listing.user.email %></h1>
+<h4>Devices</h4>
+<% @listing.devices.each do |device| %>
+<p><%= device.name %><p>
+<% end %>
+
+<h4>Reservation</h4>
+<p><%= @listing.reservation.start_date %></p>
+<p><%= @listing.reservation.end_date %></p>
+
+<h4>Automation</h4>
+<p><%= @listing.automation %></p>
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

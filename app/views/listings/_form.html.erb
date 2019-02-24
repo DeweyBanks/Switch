@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
   <div class="form-group">
     <h6>Add Devices</h6>
     <%= form.nested_fields_for :devices do |f| %>
@@ -19,6 +20,17 @@
       </div>
     <% end %>
     <%= form.add_nested_fields_link :devices %>
+  </div>
+  <div class="form-group">
+    <h6>Reservation</h6>
+    <%= form.fields_for :reservation do |f| %>
+      <div class="form-group">
+        <%= f.label :start_date %>
+        <%= f.date_field :start_date %><br>
+        <%= f.label :end_date %>
+        <%= f.date_field :end_date %>
+      </div>
+    <% end %>
   </div>
   <div class="form-group form-check form-check-inline">
     <%= form.check_box :automation, :class => "form-check-input" %>

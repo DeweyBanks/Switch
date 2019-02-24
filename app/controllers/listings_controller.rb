@@ -16,16 +16,18 @@ class ListingsController < ApplicationController
   def new
     @listing = Listing.new
     @listing.devices.build
-
+    @listing.build_reservation
   end
 
   # GET /listings/1/edit
   def edit
+    @listing.build_reservation if @product.reservation.nil?
   end
 
   # POST /listings
   # POST /listings.json
   def create
+    binding.pry
     @listing = Listing.new(listing_params)
 
     respond_to do |format|
@@ -72,8 +74,9 @@ class ListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(
+        :user_id,
         :automation,
-        reservation_attributes: [ :id, :start_date, :end_date, :_destroy ],
+        reservation_attributes: [ :id, :start_date, :end_date ],
         devices_attributes: [ :id, :name,:_destroy ]
       )
     end
