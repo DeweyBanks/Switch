@@ -27,7 +27,6 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    binding.pry
     @listing = Listing.new(listing_params)
 
     respond_to do |format|
