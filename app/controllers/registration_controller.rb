@@ -50,7 +50,7 @@ class RegistrationController < ApplicationController
       authorize_url: '/oauth/authorize',
       token_url: '/oauth/token'
     }
-    @redirect_uri = 'http://localhost:3000/oauth/callback'
+    @redirect_uri = 'https://dewswitch.herokuapp.com/oauth/callback'
     @endpoints_uri = 'https://graph.api.smartthings.com/api/smartapps/endpoints'
     @client = OAuth2::Client.new(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], options)
   end
