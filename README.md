@@ -1,24 +1,8 @@
-# README
+a working example can be found at:
+[Switch on Heroku](https://dewswitch.herokuapp.com/ "Switch")
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Create an .env file with the following keys:
+```
+CLIENT_ID="Samsung Smartthings Client Id"
+CLIENT_SECRET="Samsung Smartthings Client Secret"
+```
